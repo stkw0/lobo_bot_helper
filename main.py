@@ -30,7 +30,7 @@ class Group:
         mention_list = ""
         for k in self.last_user_activity.keys():
             if k and k != user and user not in self._ignore_list:
-                diff = new - self.last_user_activity[k]
+                diff = now - self.last_user_activity[k]
                 if diff.total_seconds() / 60 < self.range:
                     mention_list += k + " "
 
