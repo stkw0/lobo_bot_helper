@@ -74,8 +74,8 @@ class Luperca:
         ignore_handler = CommandHandler('ignore_me', self.ignore_user)
         dispatcher.add_handler(ignore_handler)
 
-        unknown_handler = MessageHandler(Filters.command, self.unknown)
-        dispatcher.add_handler(unknown_handler)
+        #unknown_handler = MessageHandler(Filters.command, self.unknown)
+        #dispatcher.add_handler(unknown_handler)
 
         update_handler = MessageHandler(Filters.text, self.update_user_activity)
         dispatcher.add_handler(update_handler)
@@ -161,8 +161,8 @@ Bugs, ideas an such: https://github.com/stkw0/lobo_bot_helper
         else:
             bot.send_message(chat_id=chat_id, text="No users to notify")
 
-    def unknown(self, bot, update):
-        bot.send_message(chat_id=update.message.chat_id, text="Sorry, I didn't understand that command.")
+    #def unknown(self, bot, update):
+    #    bot.send_message(chat_id=update.message.chat_id, text="Sorry, I didn't understand that command.")
 
     def start_bot(self):
         self.updater.start_polling(clean=True)
